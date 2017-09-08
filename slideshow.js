@@ -1,1 +1,26 @@
-var slideIndex=1;showDivs(slideIndex);function plusDivs(a){showDivs(slideIndex+=a)}function currentDiv(a){showDivs(slideIndex=a)}function showDivs(a){var b,c=document.getElementsByClassName("mySlides"),d=document.getElementsByClassName("demo");for(a>c.length&&(slideIndex=1),1>a&&(slideIndex=c.length),b=0;b<c.length;b++)c[b].style.display="none";for(b=0;b<d.length;b++)d[b].className=d[b].className.replace(" w3-red","");c[slideIndex-1].style.display="block",d[slideIndex-1].className+=" w3-red"}
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-red";
+}
